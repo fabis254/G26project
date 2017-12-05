@@ -1,0 +1,21 @@
+body, html {
+	width: 100%;
+	height: 100%;
+
+	background-image: url("images/face.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/*background-clip: padding-box;*/
+	/*background-color: gray;*/
+}
+
+div {
+	background-color: transparent;
+}
+
+img {
+	width: 500px;
+	height: 500px;
+}
+
