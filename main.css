@@ -1,21 +1,49 @@
-body, html {
-	width: 100%;
-	height: 100%;
-
-	background-image: url("images/face.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	/*background-clip: padding-box;*/
-	/*background-color: gray;*/
+div#dynamic-container{
+      width:400px;
+      height:400px; 
+      background-color: lightgoldenrodyellow; 
+      position:relative; 
+      border: 1px solid black;
 }
 
-div {
-	background-color: transparent;
-}
+div#innerCircle{
+      width: 100px; 
+      height: 100px; 
+      position: absolute; 
+      left: 150px; 
+      top:150px; 
+      background-color: lightcoral;
+      border-radius:190px; 
+      -moz-border-radius: 190px; 
+      -webkit-border-radius: 190px;
+      z-index: 17;
+}           
 
-img {
-	width: 500px;
-	height: 500px;
-}
+div#marker{
+      background: transparent; 
+      position:absolute; 
+      left:125px; 
+      cursor: crosshair;
+/*
+      -moz-transform:rotate(0deg);
+      -moz-transform-origin:50px 200px;
+      */
+      transform:rotate(0deg);
+      transform-origin:75px 200px;                          
 
+      /*-ms-transform:rotate(0deg);
+      -ms-transform-origin:50px 200px;                                
+      
+      -webkit-transform:rotate(0deg);
+      -webkit-transform-origin:50px 200px;                       
+*/
+      z-index:16;
+
+      border-radius-bottom: 50px ;
+      border-radius-left;  
+} 
+
+
+div#marker-origin {
+
+}
