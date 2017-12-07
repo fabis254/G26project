@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
         
         <script src="circle_jerk.js"></script>
@@ -9,12 +10,24 @@
     <body>
         <div id="container">
             <div id ="dynamic-container">
-                <div id="marker" ondragstart="return false;">
-                    <svg id ="markerX" width="150" height="150">
-                        <path d="M75 200 L0 50 Q75 -50 150 50 Z" />
-                        <path d="M0 0 L150 0 L150 150 L0 150 L0 0" stroke="red" stroke-width="3" fill="none"/>
+                <div id="marker" ondragstart="return false;"
+                style="pointer-events: none">
+                    <svg id ="markerA" width="150" height="145">
+                        <path d="M75 200 L0 50 Q75 -50 150 50 Z"
+                        style="pointer-events: auto" />
+                        <!-- <path d="M0 0 L150 0 L150 150 L0 150 L0 0" stroke="red" stroke-width="3" fill="none"/> -->
                     </svg>
                 </div>
+                <!-- 
+                <div id="marker2" ondragstart="return false;"
+                style="pointer-events: none">
+                    <svg id ="markerB" width="150" height="150">
+                        <path d="M75 200 L0 50 Q75 -50 150 50 Z"
+                        style="pointer-events: auto" />
+                         <path d="M0 0 L150 0 L150 150 L0 150 L0 0" stroke="red" stroke-width="3" fill="none"/>
+                    </svg>
+                </div>
+                --> 
                 <div id ="innerCircle"></div>
             </div>                
         </div>    

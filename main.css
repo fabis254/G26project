@@ -43,7 +43,26 @@ div#marker{
       border-radius-left;  
 } 
 
+div#marker2{
+      background: transparent; 
+      position:absolute; 
+      left:125px; 
+      cursor: crosshair;
+/*
+      -moz-transform:rotate(0deg);
+      -moz-transform-origin:50px 200px;
+      */
+      transform:rotate(90deg);
+      transform-origin:75px 200px;                          
 
-div#marker-origin {
+      /*-ms-transform:rotate(0deg);
+      -ms-transform-origin:50px 200px;                                
+      
+      -webkit-transform:rotate(0deg);
+      -webkit-transform-origin:50px 200px;                       
+*/
+      z-index:16;
 
-}
+      border-radius-bottom: 50px ;
+      border-radius-left;  
+} 
