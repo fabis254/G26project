@@ -57,8 +57,18 @@ function adjustToIncrement(angle, cropper){
         }
     }
 
+    if (selected < 0 && angle < -90) {
+        selected += 360;
+    }
+
+
     var rotate = 'rotate(' + selected + 'deg)';
     console.log("Doing rotation of " + dif +" defgrees to meet " + selected + "point")    
+
+    // Test to adjust for -91 too -180
+    // adjust="rotate(270deg)"
+    // cropper.css({'-moz-transform': adjust, 'transform' : adjust, '-webkit-transform': adjust, '-ms-transform': adjust, "transition": "1s ease-out"});
+
 
     // This code works:
     cropper.css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,

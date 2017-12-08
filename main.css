@@ -20,16 +20,16 @@ div#innerCircle{
 }           
 
 div#marker{
-      background: transparent; 
+      background: transparent;   
       position:absolute; 
-      left:125px; 
+      left:0px; 
       cursor: crosshair;
 /*
       -moz-transform:rotate(0deg);
       -moz-transform-origin:50px 200px;
       */
       transform:rotate(0deg);
-      transform-origin:75px 200px;                          
+      transform-origin:200px 200px;                          
 
       /*-ms-transform:rotate(0deg);
       -ms-transform-origin:50px 200px;                                
@@ -39,12 +39,13 @@ div#marker{
 */
       z-index:16;
 
-      border-radius-bottom: 50px ;
-      border-radius-left;  
+      /*border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+  */
 } 
 
 div#marker2{
-      background: transparent; 
+      background: transparent;
       position:absolute; 
       left:125px; 
       cursor: crosshair;
@@ -52,17 +53,19 @@ div#marker2{
       -moz-transform:rotate(0deg);
       -moz-transform-origin:50px 200px;
       */
+      
       transform:rotate(90deg);
       transform-origin:75px 200px;                          
-
       /*-ms-transform:rotate(0deg);
       -ms-transform-origin:50px 200px;                                
       
       -webkit-transform:rotate(0deg);
       -webkit-transform-origin:50px 200px;                       
 */
-      z-index:16;
-
-      border-radius-bottom: 50px ;
-      border-radius-left;  
+      z-index:16;      
 } 
+
+
+#markerB {
+      transform:rotate(90deg);
+}
