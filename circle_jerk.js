@@ -112,7 +112,7 @@ function adjustToIncrement(angle, cropper){
             active = $("#marker").attr("id");
             // Do the rotation following the pointer
             $('body').on('mousemove', function(event){
-                rotateAnnotationCropper($('#innerCircle').parent(), event.pageX,event.pageY, $('#marker'), ori);    
+                rotateAnnotationCropper($('#innerCircle'), event.pageX,event.pageY, $('#marker'), ori);    
             });
 
             $('body').mouseup(function(event){
