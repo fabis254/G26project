@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+        <style>
+            div#dynamic-container{
+            	width:400px; 
+            	height:400px; 
+            	margin: auto;
+            	background-color: lightgoldenrodyellow; 
+            	position:relative; 
+            	border: 1px solid black;
+            }
+            div#innerCircle{
+            	width: 380px; 
+            	height: 380px; 
+            	position: absolute;
+            	margin: auto; 
+            	left: 10px; 
+            	top:10px; 
+            	background-color: lightcoral;
+            		border-radius: 190px; /*190px;*/ 
+            		-moz-border-radius: 190px; /*190px;*/ 
+            		-webkit-border-radius: 190px/*190px;*/
+            	}
+
+            div#marker{
+            	width: 100px; 
+            	height:100px; 
+            	background: black; 
+            	position:absolute; 
+            	left:195px;
+            	top: -90px; 
+            	cursor: crosshair;
+                        -moz-transform:rotate(45deg);
+                        -moz-transform-origin:5px 290px;
+                        
+                        transform:rotate(45deg);
+                        transform-origin:5px 290px;                          
+
+                        -ms-transform:rotate(45deg);
+                        -ms-transform-origin:5px 290px;                                
+                        
+                        -webkit-transform:rotate(45deg);
+                        -webkit-transform-origin: 5px 290px;                       
+            
+                        z-index:17;
+            } 
+
+    </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id ="dynamic-container">
+                <div id ="marker"></div>
+                <div id ="innerCircle"></div>
+            </div>                
+        </div>    
+
+
+
+
+
+<script type="text/javascript">
+	
+	        function rotateAnnotationCropper(offsetSelector, xCoordinate, yCoordinate, cropper){
+                    //alert(offsetSelector.left);
+                
+                    var x = xCoordinate - offsetSelector.offset().left - offsetSelector.width()/2;
+                    var y = -1*(yCoordinate - offsetSelector.offset().top - offsetSelector.height()/2);
+                    var theta = Math.atan2(y,x)*(180/Math.PI);        
+
+
+                    var cssDegs = convertThetaToCssDegs(theta);
+                    var rotate = 'rotate(' +cssDegs + 'deg)';
+                    cropper.css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate});
+                    $('body').on('mouseup', function(event){ $('body').unbind('mousemove')});
+
+            }
+            
+            function convertThetaToCssDegs(theta){
+                var cssDegs = 90 - theta;
+                return cssDegs;
+            }
+            
+            $(document).ready(function(){               
+                
+                $('#marker').on('mousedown', function(){
+                    $('body').on('mousemove', function(event){
+                        rotateAnnotationCropper($('#innerCircle').parent(), event.pageX,event.pageY, $('#marker'));    
+                    });
+                                        
+                });                    
+            }); 
+</script>
+</body>
+
+</html>
