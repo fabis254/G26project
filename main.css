@@ -1,9 +1,18 @@
+body, html {
+      height: 100%;
+}
+
+
 div#dynamic-container{
-      width:400px;
-      height:400px; 
-      background-color: lightgoldenrodyellow; 
+      width:800px;
+      height:800px; 
+      /*background-color: lightgoldenrodyellow;*/
+      background-color: transparent;
+      margin: auto;
+      margin-top: 15%;
       position:relative; 
       border: 1px solid black;
+
 }
 
 div#innerCircle{
@@ -13,10 +22,16 @@ div#innerCircle{
       left: 150px; 
       top:150px; 
       background-color: lightcoral;
-      border-radius:190px; 
+      border-radius:190px;
+
       -moz-border-radius: 190px; 
       -webkit-border-radius: 190px;
       z-index: 17;
+
+      -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      border: 10px solid white;
 }           
 
 div#marker{
@@ -44,28 +59,14 @@ div#marker{
   */
 } 
 
-div#marker2{
-      background: transparent;
-      position:absolute; 
-      left:125px; 
-      cursor: crosshair;
-/*
-      -moz-transform:rotate(0deg);
-      -moz-transform-origin:50px 200px;
-      */
-      
-      transform:rotate(90deg);
-      transform-origin:75px 200px;                          
-      /*-ms-transform:rotate(0deg);
-      -ms-transform-origin:50px 200px;                                
-      
-      -webkit-transform:rotate(0deg);
-      -webkit-transform-origin:50px 200px;                       
-*/
-      z-index:16;      
-} 
+#footer {
+      position: absolute;
+      bottom: 0px;
+      top: 0px;
+      z-index;1;
 
-
-#markerB {
-      transform:rotate(90deg);
+      margin: auto;
+      color: white;
+      background-color: white;
+      width: 100%;
 }

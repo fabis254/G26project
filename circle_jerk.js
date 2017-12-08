@@ -1,7 +1,7 @@
 
 
 
-function rotateAnnotationCropper(offsetSelector, xCoordinate, yCoordinate, cropper){
+function rotateAnnotationCropper(offsetSelector, xCoordinate, yCoordinate, cropper, orientation){
         cropper.css({"transition" : "none"})
         var d = new Date();
         
@@ -10,9 +10,35 @@ function rotateAnnotationCropper(offsetSelector, xCoordinate, yCoordinate, cropp
             var theta = Math.atan2(y,x)*(180/Math.PI);        
 
             var cssDegs = convertThetaToCssDegs(theta);
+            
+            var angle = getAngle();
+            console.log("ANGLE: " + angle)
+            console.log("ORIENTATION: " + orientation)
+
+            // ---------------
+            // Special conditions for stupid angles, im sure there is a way to find
+            // the pattern, but this works and that is the most important thing
+            if (orientation == -90 && angle<0 && angle>-90) {
+                 orientation += 360;
+            }
+
+            if (orientation == 90 && angle<-90) {
+                 orientation -= 360;
+            }
+
+            if (orientation == 180 && (angle > 90 || angle < -90)) {
+                 orientation -= 360;
+            }
+            //----------------
+
+            // Adjust the rotation according to what wing is grabbed
+            cssDegs = cssDegs - orientation;
+
+            // Do the rotation
+            adjustedSpeed = cssDegs*0.8;
             var rotate = 'rotate(' +cssDegs + 'deg)';
             cropper.css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate});
-            
+            // Unbind events
             $('body').mouseup(function(event){
                 $('body').unbind('mousemove');
                 $('body').unbind('mouseup');
@@ -24,8 +50,9 @@ function rotateAnnotationCropper(offsetSelector, xCoordinate, yCoordinate, cropp
         return cssDegs;
     }
 
-function getAngle(e_init){
-    var el = document.getElementById(e_init);
+function getAngle(){
+    //Calculate the angle of Marker
+    var el = document.getElementById("marker");
     var st = window.getComputedStyle(el, null);
     var tr = st.getPropertyValue("-webkit-transform") ||
              st.getPropertyValue("-moz-transform") ||
@@ -38,7 +65,7 @@ function getAngle(e_init){
     var b = values[1];    
 
     var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
-    console.log("Rotation: " + angle + "deg");
+    // console.log("Rotation: " + angle + "deg");
     return angle
 }
 
@@ -57,35 +84,35 @@ function adjustToIncrement(angle, cropper){
         }
     }
 
+    // Adjust for stupid angles
     if (selected < 0 && angle < -90) {
         selected += 360;
     }
 
-
-    var rotate = 'rotate(' + selected + 'deg)';
-    console.log("Doing rotation of " + dif +" defgrees to meet " + selected + "point")    
-
-    // Test to adjust for -91 too -180
-    // adjust="rotate(270deg)"
-    // cropper.css({'-moz-transform': adjust, 'transform' : adjust, '-webkit-transform': adjust, '-ms-transform': adjust, "transition": "1s ease-out"});
-
-
+    // Smooth animation to put elements in place
     // This code works:
+    var rotate = 'rotate(' + selected + 'deg)';
     cropper.css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,
         "transition": "1s ease-out"});
-
-    // Had an idea of adding classes
-    //cropper.addClass("_90");
-
 }
 
     $(document).ready(function(){               
-        
-        $('#marker').on('mousedown', function(event){
-            active = $(this).attr("id");
-            //alert($('#innerCircle').parent().offset().left);
+ 
+        $(".wing").on("mousedown", function(event) {
+            // console.log("PAGEX ON WING: " + event.pageX)
+        });
+
+        $('.wing').on('mousedown', function(event){
+            // get the orientation of the path (i.e. 0, 90, 180, -90)
+            str_ori = $(this).attr("id");
+            var ori = parseInt(str_ori, 10);
+            console.log("ORIENTATION: " + ori);
+            
+            // Get the id of the active attribute (will always be #marker)
+            active = $("#marker").attr("id");
+            // Do the rotation following the pointer
             $('body').on('mousemove', function(event){
-                rotateAnnotationCropper($('#innerCircle').parent(), event.pageX,event.pageY, $('#marker'));    
+                rotateAnnotationCropper($('#innerCircle').parent(), event.pageX,event.pageY, $('#marker'), ori);    
             });
 
             $('body').mouseup(function(event){
@@ -93,7 +120,6 @@ function adjustToIncrement(angle, cropper){
                 $('body').unbind('mouseup');
                 
                 var ang = getAngle(active);
-                
                 var b = adjustToIncrement(ang, $('#marker'));
                 
             });
