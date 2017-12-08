@@ -3,7 +3,7 @@ body, html {
 }
 
 
-div#dynamic-container{
+#dynamic-container{
       width:800px;
       height:800px; 
       /*background-color: lightgoldenrodyellow;*/
@@ -15,12 +15,12 @@ div#dynamic-container{
 
 }
 
-div#innerCircle{
+#innerCircle{
       width: 100px; 
-      height: 100px; 
-      position: absolute; 
-      left: 150px; 
-      top:150px; 
+      height: 100px;
+      position: relative; 
+      top: -250px;
+      margin: auto; 
       background-color: lightcoral;
       border-radius:190px;
 
@@ -34,11 +34,13 @@ div#innerCircle{
       border: 10px solid white;
 }           
 
-div#marker{
-      background: transparent;   
-      position:absolute; 
-      left:0px; 
+#marker{
+      width: 50%;
+      background: lightgreen;   
+      /*position:absolute;*/ 
+      margin: auto;
       cursor: crosshair;
+      pointer-events: none;
 /*
       -moz-transform:rotate(0deg);
       -moz-transform-origin:50px 200px;
@@ -69,4 +71,27 @@ div#marker{
       color: white;
       background-color: white;
       width: 100%;
+}
+
+.wing {
+      pointer-events: auto;
+      stroke: black;
+      stroke-width: 5px;
+      stroke-linecap: round;
+}
+
+.wingRed {
+      fill: red;
+}
+
+.wingGreen {
+      fill: green;
+}
+
+.wingBlue {
+      fill: blue;
+}
+
+.wingYellow {
+      fill: yellow;
 }
