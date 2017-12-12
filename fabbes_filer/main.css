@@ -106,10 +106,14 @@ body, html {
 ._1 {
       width: 100%;
       height: 100%;
-      background-color: gray;
       position: absolute;
       top: -100%;
       z-index: 1;
+      background-color: gray;
+      background-color: linear-gradient(gray, black);
+      background: -webkit-linear-gradient(gray, black); /* For Safari 5.1 to 6.0 */
+         background: -o-linear-gradient(gray, black); /* For Opera 11.1 to 12.0 */
+         background: -moz-linear-gradient(gray, black);
 }
 
 ._2 {
@@ -132,11 +136,8 @@ body, html {
       width: 250px;
       height: 250px;
       
-      bottom: 50%;
-      left: 50%;
-
-      margin-bottom: -125px;
-      margin-left: -125px;
+      top: 50%;
+      left: 40%;
 
       border-radius: 50%;
       margin: auto;
