@@ -1,6 +1,9 @@
 
 //###### Main-funktionen uppflyttad hit #######
-$(document).ready(function(){               
+$(document).ready(function(){ 
+	$(".wing").click(function() {
+		$("#marker").css({"transform": "rotate(90deg)", "transition": "1s ease-out"})
+	});              
 
     $('.wing').on('mousedown', function(event){
         // Get mouse angle (theta) from center
