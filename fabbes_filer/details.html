@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+</head>
+<body>
+	<div class="topper show"></div>
+	<div class="_1 off">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam nam consequuntur enim facilis, facere at est possimus rem dolor tenetur quas quo vero? Ea commodi quo natus distinctio laboriosam!</div>
+	<div class="_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quisquam nam consequuntur enim facilis, facere at est possimus rem dolor tenetur quas quo vero? Ea commodi quo natus distinctio laboriosam!</div>
+</body>
+
+<script type="text/javascript">
+	$('body').click(function() {
+		// $('._1').css({"transition": "2s ease-out", "top" : 0});
+		$('._1').toggleClass("on")
+		$('._1').toggleClass("off")
+		
+		$('.topper').toggleClass('hide')
+		$('.topper').toggleClass('show')
+		
+		// $('.topper').css({
+		// 	"bottom" : "-=100%",
+		// 	"transition" : "1s ease-out"
+		// })
+	});
+</script>
+
+</html>
