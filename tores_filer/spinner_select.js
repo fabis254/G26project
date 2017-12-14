@@ -2,6 +2,7 @@
 //###### Main-funktionen uppflyttad hit #######
 $(document).ready(function(){ 
 	var mouse_down = false;
+	var selected_wing = $("#0");
 	
 	window.setInterval(function() {
 		if (!mouse_down) {
@@ -75,21 +76,18 @@ function updateSelect() {
 	$(".wing").css({"stroke": "black"});
 	let ang = getAngle();
 	if (ang==0) {
-		$("#0").css("stroke", "white");
-		//$("#0").css("stroke", "blue");
+		selected_wing = $("#0");
 	}
 	else if (ang==-90) {
-		$("#1").css("stroke", "white");
-		//$("#1").css("stroke", "blue");
+		selected_wing = $("#1");
 	}
 	else if (ang==180||ang==-180) {
-		$("#2").css("stroke", "white");
-		//$("#2").css("stroke", "blue");
+		selected_wing = $("#2");
 	} 
 	else if (ang==90) {
-		$("#3").css("stroke", "white");
-		//$("#3").css("stroke", "blue");
+		selected_wing = $("#3");
 	}
+	selected_wing.css("stroke", "white")
 	
 }
 
