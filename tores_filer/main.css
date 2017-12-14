@@ -95,3 +95,8 @@ body, html {
 .wingYellow {
       fill: yellow;
 }
+
+.selected {
+      stroke: blue;
+      stroke-width: 6px;
+}
