@@ -1,10 +1,17 @@
 
 //###### Main-funktionen uppflyttad hit #######
 $(document).ready(function(){ 
-
+	var mouse_down = false;
+	
+	window.setInterval(function() {
+		if (!mouse_down) {
+			rotateQuarter();
+		}
+	}, 3000);
 	// Update selected wing
 	updateSelect()
     $('.wing').on('mousedown', function(event){
+    	mouse_down = true;
         // Get mouse angle (theta) from center
         var theta = getPositiveTheta($("#innerCircle"), event.pageX,event.pageY)
         // Get current orientation
@@ -34,12 +41,34 @@ $(document).ready(function(){
             $("#marker").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
               function(event) {
     			updateSelect();
+    			mouse_down = false;
 
   			});
             
         });
     });                   
 }); 
+
+function rotateQuarter() {
+	//console.log("rotate 90")
+	let ang = getAngle()
+	let rot = ang + 90;
+	console.log("ang:", ang, "rot", rot)
+	let rotate = 'rotate(' + rot + 'deg)';
+    $("#marker").css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,
+        "transition": "1s ease-out"});
+    $(".wing").css("stroke", "black");
+    
+    $("#marker").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+            	function(event) {
+             if (rot==270) {
+              	rot = -90;
+              	rotate = 'rotate(' + rot + 'deg)';
+    			$("#marker").css({'transform': rotate, "transition": "none"});
+              	}
+    			updateSelect();
+    	});
+    }
 
 function updateSelect() {
 	//$(".wing").removeClass("selected");
