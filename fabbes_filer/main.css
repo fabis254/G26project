@@ -6,6 +6,10 @@ body, html {
       background-color: #F0EAD6;
 }
 
+path {
+      border: solid green 10px;
+}
+
 .pointer {
       width: 10px;
       height: 30px;
@@ -187,11 +191,18 @@ body, html {
       position: absolute;
       top: -100%;
       z-index: 1;
-      background-color: gray;
-      background-color: linear-gradient(gray, black);
-      background: -webkit-linear-gradient(gray, black); /* For Safari 5.1 to 6.0 */
-         background: -o-linear-gradient(gray, black); /* For Opera 11.1 to 12.0 */
+      
+      background: #eb01a5;
+      background-image: url("images/easter.jpg"); /* fallback */
+      background-image: url("images/easter.jpg"), linear-gradient(#eb01a5, transparent)
+
+      /*background: -webkit-linear-gradient(blue, transparent);
+      background-color: linear-gradient(blue, transparent);
+      */
+      /*
+         background: -o-linear-gradient(gray, black); 
          background: -moz-linear-gradient(gray, black);
+      */
 }
 
 ._2 {

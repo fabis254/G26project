@@ -1,5 +1,32 @@
 
 //###### Main-funktionen uppflyttad hit #######
+function rotateQuarter(speed) {
+    //console.log("rotate 90")
+    let ang = getAngle()
+    let rot = ang + 90;
+    //console.log("ang:", ang, "rot", rot)
+    let rotate = 'rotate(' + rot + 'deg)';
+    $("#marker").css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,
+        "transition": speed+"s ease-in-out"});
+    $(".wing").css("stroke", "black");
+    
+    $("#marker").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                function(event) {
+             if (rot==270) {
+                rot = -90;
+                rotate = 'rotate(' + rot + 'deg)';
+                $("#marker").css({'transform': rotate, "transition": "none"});
+                }
+        });
+    }
+console.log("Before load")
+loader = setInterval(function() {
+            rotateQuarter(0.2);
+    }, 250);
+window.setTimeout(function(){
+    clearInterval(loader)
+}, 4000);
+
 $(document).ready(function(){  
     let p_top = $("body").height()/2 - 300;
     console.log("p_top", p_top);
