@@ -1,12 +1,28 @@
 
 //###### Main-funktionen uppflyttad hit #######
-$(document).ready(function(){  
+$(document).ready(function(){
+
+    // Some variables
+    var mouse_down = false;
+    var selected_wing = $("#0");
+
+    // Set pointer position  
     let p_top = $("body").height()/2 - 300;
     console.log("p_top", p_top);
     $(".pointer").css("top", p_top);
 
+    // automatic rotation
+    window.setInterval(function() {
+        if (!mouse_down) {
+            rotateQuarter();
+        }
+    }, 5000);
+    // Update selected wing
+    updateSelect()
+
 
     $('.wing').on('mousedown', function(event){
+        mouse_down = true;
         // Get mouse angle (theta) from center
         var theta = getPositiveTheta($("#innerCircle"), event.pageX,event.pageY)
         // Get current orientation
@@ -23,6 +39,7 @@ $(document).ready(function(){
             // Rotate
             var rotate = 'rotate(' + rotation + 'deg)';
             $("#marker").css({"transition": "none", "transform": rotate })    
+            updateSelect()
         });
                       
         $('body').mouseup(function(event){
@@ -31,10 +48,57 @@ $(document).ready(function(){
 
             var ang = getAngle();
             var b = adjustToIncrement(ang, $('#marker'));
+            // Execute when transition has ended:
+            $("#marker").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+              function(event) {
+                updateSelect();
+                mouse_down = false;
+
+            });
             
         });
     });                   
 }); 
+
+function rotateQuarter() {
+    //console.log("rotate 90")
+    let ang = getAngle()
+    let rot = ang + 90;
+    //console.log("ang:", ang, "rot", rot)
+    let rotate = 'rotate(' + rot + 'deg)';
+    $("#marker").css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,
+        "transition": "1s ease-out"});
+    $(".wing").css("stroke", "black");
+    
+    $("#marker").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                function(event) {
+             if (rot==270) {
+                rot = -90;
+                rotate = 'rotate(' + rot + 'deg)';
+                $("#marker").css({'transform': rotate, "transition": "none"});
+                }
+                updateSelect();
+        });
+    }
+
+function updateSelect() {
+    $(".wing").css({"stroke": "black"});
+    let ang = getAngle();
+    if (ang==0) {
+        selected_wing = $("#0");
+    }
+    else if (ang==-90) {
+        selected_wing = $("#1");
+    }
+    else if (ang==180||ang==-180) {
+        selected_wing = $("#2");
+    } 
+    else if (ang==90) {
+        selected_wing = $("#3");
+    }
+    selected_wing.css("stroke", "white");
+    
+}
 
 
 
