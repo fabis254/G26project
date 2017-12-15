@@ -6,9 +6,7 @@ body, html {
       background-color: #F0EAD6;
 }
 
-path {
-      border: solid green 10px;
-}
+
 
 .pointer {
       width: 10px;
@@ -26,6 +24,9 @@ path {
       background-color: #FFFFFF;
       border: solid black 2px;
       overflow-x: visible;
+
+      z-index: 18;
+      visibility: visible;
 }
 
 #dynamic-container{
@@ -33,7 +34,7 @@ path {
       height: 100%; 
       /*background-color: lightgoldenrodyellow;*/
       background-color: transparent;
-      /*border: 1px solid black;*/
+      border: 1px solid black;
 
       /*Center vertically*/
       position: relative; 
@@ -43,6 +44,7 @@ path {
       right: 0;*/
       margin: auto;
       padding: 0px;
+      visibility: hidden;
 }
 
 #innerCircle{
@@ -68,6 +70,7 @@ path {
       border: 5px solid black;
       /*Depth*/
       z-index: 17;
+      visibility: visible;
 
 }           
 
@@ -79,6 +82,7 @@ path {
       top: 5px;
       left: 5px;
       visibility: hidden;
+
 }
 
 #marker{
@@ -114,6 +118,7 @@ path {
       -webkit-transform-origin:250px 250px;
       /*Depth*/
       z-index:16;
+      visibility: visible;
 }
 
 .wing {
@@ -210,6 +215,11 @@ path {
       height: 100%;
       background-color: black;
       color: white;
+      position: absolute;
+      z-index: 11;
+      opacity: 0.8;
+      top: 0%;
+      float: right;
 }
 
 .on {
