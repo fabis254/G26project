@@ -1,9 +1,11 @@
 
 //###### Main-funktionen uppflyttad hit #######
-$(document).ready(function(){ 
+$(document).ready(function(){  
+    let p_top = $("body").height()/2 - 300;
+    console.log("p_top", p_top);
+    $(".pointer").css("top", p_top);
 
-	// Update selected wing
-	updateSelect()
+
     $('.wing').on('mousedown', function(event){
         // Get mouse angle (theta) from center
         var theta = getPositiveTheta($("#innerCircle"), event.pageX,event.pageY)
@@ -21,7 +23,6 @@ $(document).ready(function(){
             // Rotate
             var rotate = 'rotate(' + rotation + 'deg)';
             $("#marker").css({"transition": "none", "transform": rotate })    
-        	updateSelect()
         });
                       
         $('body').mouseup(function(event){
@@ -30,39 +31,12 @@ $(document).ready(function(){
 
             var ang = getAngle();
             var b = adjustToIncrement(ang, $('#marker'));
-            // Execute when transition has ended:
-            $("#marker").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-              function(event) {
-    			updateSelect();
-
-  			});
             
         });
     });                   
 }); 
 
-function updateSelect() {
-	//$(".wing").removeClass("selected");
-	$(".wing").css({"stroke": "black"});
-	let ang = getAngle();
-	if (ang==0) {
-		$("#0").css("stroke", "white");
-		//$("#0").css("stroke", "blue");
-	}
-	else if (ang==-90) {
-		$("#1").css("stroke", "white");
-		//$("#1").css("stroke", "blue");
-	}
-	else if (ang==180||ang==-180) {
-		$("#2").css("stroke", "white");
-		//$("#2").css("stroke", "blue");
-	} 
-	else if (ang==90) {
-		$("#3").css("stroke", "white");
-		//$("#3").css("stroke", "blue");
-	}
-	
-}
+
 
 function getAngle(){
     //Calculate the angle of Marker

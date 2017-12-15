@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+</head>
+<body>
+	<div class="topper show"></div>
+	<div class="_1 off">
+		<div class="picture"></div>
+		<div class="container">
+			<h1 class="headline">Title</h1>
+			<div class="text_area">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat hic sunt qui earum molestiae vitae odio obcaecati, rerum, ullam, eligendi quam iusto in quod quos harum similique. Excepturi, cumque natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam nostrum architecto reprehenderit eaque! Dolor nesciunt eligendi earum qui assumenda numquam asperiores mollitia quaerat ex nulla, tempore obcaecati, inventore, libero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iste, quisquam reprehenderit totam incidunt, aliquam, aspernatur quam assumenda delectus nemo corporis veritatis cumque. Doloribus reprehenderit sit minus cupiditate minima, at. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat hic sunt qui earum molestiae vitae odio obcaecati, rerum, ullam, eligendi quam iusto in quod quos harum similique. Excepturi, cumque natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam nostrum architecto reprehenderit eaque! Dolor nesciunt eligendi earum qui assumenda numquam asperiores mollitia quaerat ex nulla, tempore obcaecati, inventore, libero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iste, quisquam reprehenderit totam incidunt, aliquam, aspernatur quam assumenda delectus nemo corporis veritatis cumque. Doloribus reprehenderit sit minus cupiditate minima, at.</div>
+		</div>
+	</div>
+	<div class="_2"></div>
+</body>
+
+<script type="text/javascript">
+	$('body').click(function() {
+		// $('._1').css({"transition": "2s ease-out", "top" : 0});
+		$('._1').toggleClass("on")
+		$('._1').toggleClass("off")
+		
+		$('.topper').toggleClass('hide')
+		$('.topper').toggleClass('show')
+		
+		// $('.topper').css({
+		// 	"bottom" : "-=100%",
+		// 	"transition" : "1s ease-out"
+		// })
+	});
+</script>
+
+</html>

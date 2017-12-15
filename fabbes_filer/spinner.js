@@ -1,6 +1,10 @@
 
 //###### Main-funktionen uppflyttad hit #######
-$(document).ready(function(){               
+$(document).ready(function(){  
+    let p_top = $("body").height()/2 - 300;
+    console.log("p_top", p_top);
+    $(".pointer").css("top", p_top);
+
 
     $('.wing').on('mousedown', function(event){
         // Get mouse angle (theta) from center
