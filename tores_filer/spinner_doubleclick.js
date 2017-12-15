@@ -54,7 +54,7 @@ function rotateQuarter() {
 	//console.log("rotate 90")
 	let ang = getAngle()
 	let rot = ang + 90;
-	//console.log("ang:", ang, "rot", rot)
+	console.log("ang:", ang, "rot", rot)
 	let rotate = 'rotate(' + rot + 'deg)';
     $("#marker").css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,
         "transition": "1s ease-out"});
@@ -86,7 +86,7 @@ function updateSelect() {
 	else if (ang==90) {
 		selected_wing = $("#3");
 	}
-	selected_wing.css("stroke", "white");
+	selected_wing.css("stroke", "white")
 	
 }
 
