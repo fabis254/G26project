@@ -10,21 +10,65 @@
     <body>
         <div id="container">
             <div id ="dynamic-container">
-                <div id="marker" ondragstart="return false;">
-                    <svg id ="markerA" width="400" height="400">
-                        <!-- path 1 -->
-                        <path class="wing wingRed" id="0" d="M200 200 L125 50 Q200 -50 275 50 Z"/>
-                        <!-- Path 2 -->
-                        <path class="wing wingGreen" id="90" d="M200 200 L350 125 Q450 200 350 275 Z"/>
-                        <!-- Path 3 -->
-                        <path class="wing wingBlue" id="180" d="M200 200 L275 345 Q200 455 125 345 Z"/>
-                        <!-- Path 4 -->
-                        <path class="wing wingYellow" id="-90" d="M200 200 L50 125 Q-50 200 50 275 Z"/>                        
-                    </svg>
+                <div class="pointer">
                 </div>
-                <div id ="innerCircle" ></div>
-            </div>                
-        </div>  
+                <div id="marker" ondragstart="return false;">
+                    <svg id ="markerA" width="550" height="550">
+                        <!-- Path 1 image -->
+                        <defs>
+                          <pattern id="img1" patternUnits="userSpaceOnUse" width="500" height="300">
+                            <image xlink:href="images/easter.jpg" x="0" y="0" width="500" height="400" />
+                          </pattern>
+                        </defs>
+                        <!-- path 1 -->
+                        <path class="wing" id="0" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z" fill="url(#img1)"/>
+
+                        <!-- Path 2 image -->
+                        <defs>
+                          <pattern id="img2" patternUnits="userSpaceOnUse" width="500" height="350">
+                            <image xlink:href="images/lucia.jpg" x="190" y="40" width="400" height="320" />
+                          </pattern>
+                        </defs>
+
+                        <!-- Path 2 -->
+                        <path class="wing" id="90" d="M250 250 L437.5 156.25 Q562.5 250 437.5 343.75 Z" fill="url(#img2)"/>
+
+                        <!-- Path 3 image -->
+                        <defs>
+                          <pattern id="img3" patternUnits="userSpaceOnUse" width="500" height="600">
+                            <image xlink:href="images/midsommar.jpg" x="130" y="95" width="310" height="600" />
+                          </pattern>
+                        </defs>
+
+                        <!-- Path 3 -->
+                        <path class="wing" id="180" d="M250 250 L343.75 431.25 Q250 568.75 156.25 431.25 Z" fill="url(#img3)"/>
+                        
+
+                        <!-- Path 4 image -->
+                        <defs>
+                          <pattern id="img4" patternUnits="userSpaceOnUse" width="375" height="375">
+                            <image xlink:href="images/valborg.jpg" x="-85" y="0" width="375" height="375" />
+                          </pattern>
+                        </defs>                        
+                        <!-- Path 4 -->
+                        <path class="wing" id="-90" d="M250 250 L62.5 156.25 Q-62.5 250 62.5 343.75 Z" fill="url(#img4)"/>                        
+                    </svg>
+                    
+                    <!-- <img class="egg" src="images/easter.jpg" alt="NONE EASTER"> -->
+
+                    <!-- Circle -->
+                    <div id ="innerCircle" >
+                        <img src="images/spin.png">
+                    </div>
+                </div>
+            </div>
+        </div>                  
+        <!-- Social links -->
+
+        <!-- Title -->
+        <div class="footer">
+            <p class="footer title_text large">Swedish Holidays showcase
+            </p>
     </body>
 
 </html>
