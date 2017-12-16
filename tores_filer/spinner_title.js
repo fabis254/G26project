@@ -99,7 +99,7 @@ function updateSelect() {
     selected_wing.css("stroke", "white");
     console.log(selected_wing.data("title"))
     $("#holiday_text").text(selected_wing.data("title"));
-    
+    $("body").css({"background-image": selected_wing.data("image")});    
 }
 
 

@@ -4,6 +4,9 @@ body, html {
       margin: 0px;
       overflow: hidden;
       background-color: #F0EAD6;
+      /*background-image: url("images/midsommar_large.jpg");*/
+      background-repeat: no-repeat;
+      background-size: cover;
 }
 
 .pointer {
