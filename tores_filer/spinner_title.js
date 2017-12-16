@@ -6,9 +6,18 @@ $(document).ready(function(){
     var selected_wing = $("#0");
 
     // Set pointer position  
-    let p_top = $("body").height()/2 - 300;
-    console.log("p_top", p_top);
-    $(".pointer").css("top", p_top);
+    let pointer_top = $("body").height()/2 - 300;
+    let pointer_left = ($(".pointer").parent().width()/2) - ($(".pointer").width()/2) - 5;//- $("#holiday_title").width()//($(".pointer").width()/2); //- (p_width/2); -
+    let p_width = $(".pointer p").width();
+    let svg_left = p_width/2 - 4;
+    console.log($("body").width());
+    console.log("ponter width:", $(".pointer").width());
+    console.log("pointer_top", pointer_top);
+    console.log("pointer_left", pointer_left);
+    console.log("p_width", p_width);
+    $(".pointer").css("margin-top", pointer_top);
+    $(".pointer").css("margin-left", pointer_left);
+    $(".pointer svg").css("margin-left", svg_left)
 
     // automatic rotation
     rotateTimer = setInterval(function() {
