@@ -2,3 +2,9 @@
 
 Använda template för att upprepa samma form. 
 https://css-tricks.com/svg-tabs-using-svg-shape-template/
+
+
+TODO:
+- Gör vingarna klicbara (dubbelklick), leder till detaljerat vy
+- gör en knapp ovanför, med "läs mer", leder till detaljerad vy
+- Gör animering av solfjädern.  
