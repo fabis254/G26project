@@ -38,7 +38,6 @@ $(document).ready(function(){
             // Rotate
             var rotate = 'rotate(' + rotation + 'deg)';
             $("#marker").css({"transition": "none", "transform": rotate })    
-            updateSelect()
         });
                       
         $('body').mouseup(function(event){
