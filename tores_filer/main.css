@@ -180,6 +180,27 @@ body, html {
       font-weight: bolder;
 }
 
+#holiday_title {
+      position: absolute;
+      top: 10px;
+      float: left;
+      margin: 2px;
+      margin-left: 10px;
+      border-radius: 25px;
+      /*width: 180px;*/
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font: sans-serif;
+      background-color:rgba(100, 100, 100, 0.5);
+      color: #F0F8FF;
+}
+
+#holiday_text {
+      opacity: 0.9;
+      margin: 0px;
+
+}
 
 
 /*Testing out the transitionpage under here*/
