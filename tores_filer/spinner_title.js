@@ -3,7 +3,6 @@
 $(document).ready(function(){
 
     // Some variables
-    var mouse_down = false;
     var selected_wing = $("#0");
 
     // Set pointer position  
@@ -12,17 +11,17 @@ $(document).ready(function(){
     $(".pointer").css("top", p_top);
 
     // automatic rotation
-    window.setInterval(function() {
-        if (!mouse_down) {
+    rotateTimer = setInterval(function() {
             rotateQuarter();
-        }
     }, 5000);
     // Update selected wing
     updateSelect()
 
 
     $('.wing').on('mousedown', function(event){
-        mouse_down = true;
+        // Stop automatic rotation
+        clearInterval(rotateTimer);
+        //mouse_down = true;
         // Get mouse angle (theta) from center
         var theta = getPositiveTheta($("#innerCircle"), event.pageX,event.pageY)
         // Get current orientation
@@ -55,6 +54,11 @@ $(document).ready(function(){
                 mouse_down = false;
 
             });
+
+            // Restart automatic rotation
+            rotateTimer = setInterval(function() {
+                rotateQuarter();
+            }, 5000);
             
         });
     });                   
