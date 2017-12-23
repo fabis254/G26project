@@ -44,7 +44,7 @@ body, html {
       right: 0;*/
       margin: auto;
       padding: 0px;
-      visibility: hidden;
+      /*visibility: normal;*/
 }
 
 #innerCircle{

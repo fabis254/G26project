@@ -19,13 +19,13 @@ function rotateQuarter(speed) {
                 }
         });
     }
-console.log("Before load")
-loader = setInterval(function() {
-            rotateQuarter(0.2);
-    }, 250);
-window.setTimeout(function(){
-    clearInterval(loader)
-}, 4000);
+// console.log("Before load")
+// loader = setInterval(function() {
+//             rotateQuarter(0.2);
+//     }, 250);
+// window.setTimeout(function(){
+//     clearInterval(loader)
+// }, 100);
 
 $(document).ready(function(){  
     let p_top = $("body").height()/2 - 300;

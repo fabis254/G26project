@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
     <script type="text/javascript" src="spinner.js"></script>
+    <script type="text/javascript" src="transitions.js"></script>
 </head>
 <body>
 	<!-- <div class="topper show"></div> -->
@@ -20,10 +21,11 @@
     <div id ="dynamic-container">
         <div class="pointer">
         </div>
+
         <div id="marker" ondragstart="return false;">
             <svg id ="markerA" width="520" height="520">
                 <!-- Path 1 image -->
-                <defs>
+                <defs> 
                   <pattern id="img1" patternUnits="userSpaceOnUse" width="500" height="300">
                     <image xlink:href="images/easter.jpg" x="0" y="0" width="500" height="400" />
                   </pattern>
