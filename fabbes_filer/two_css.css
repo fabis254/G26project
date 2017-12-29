@@ -1,0 +1,112 @@
+body, html {
+      height: 100vh;
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+      background-color: #F0EAD6;
+}
+
+.on {
+	top: 0%;
+	background-color: purple;
+	transition: 0.5s;
+}
+
+.d_off {
+	top: -100%;
+	background-color: purple;
+	cursor: pointer;
+	transition: 0.5s;
+	overflow-y: hidden;
+}
+
+.s_off {
+	top: 100%;
+	transition: 0.5s;
+}
+
+
+.page {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.spinner {
+	
+	/*float: right;*/
+}
+
+.details {
+	/*background: #eb01a5;*/
+
+}
+
+
+.dynamic-container {
+	width: 1000px;
+      height: 100%; 
+      background-color: lightgoldenrodyellow;
+      /*background-color: transparent;*/
+      /*border: 1px solid black;*/
+
+      position: relative; 
+      margin: auto;
+      padding: 0px;
+}
+
+.marker {
+	padding: 0px;
+    width: 500px;
+    height: 500px;
+
+    margin: auto;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+}
+
+
+.wing {
+		cursor: crosshair;
+}
+
+
+.container {
+      width: 600px;
+      height: 400px;
+      position: relative;
+      margin-top: 20px;
+      margin-right: 50px; 
+      float: right;
+      color: white;
+
+}
+
+.textarea {
+      overflow-y: scroll;
+      word-wrap: break-word;
+      /*background-color: orange;*/
+}
+
+.headline {
+ 
+}
+
+.picture {
+      width: 400px;
+      height: 500px;
+      margin-top: 20px;
+      margin-left: 50px;
+      
+      float: left;
+
+      border: solid white 5px;
+
+      background-image: url("images/face.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right; 
+}
