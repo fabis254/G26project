@@ -4,28 +4,41 @@
 	<meta charset="utf-8">
 	<title>Two pages</title>
 	<link rel="stylesheet" type="text/css" href="two_css.css">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="slideshow.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="animation.js"> </script>
+	<script type="text/javascript" src="slideshow.js"></script>
 </head>
 <body>
 	<!-- Details Page -->
 	<div class="page details d_off">
-		<button class="escape_button">Tillbaka</button>
-		<div class="picture"></div>
+		<div class="picture">
+			<img id="pic" src="images/face.jpg" alt="Not found">
+		</div>	
 		<div class="container">
 			<h1 class="headline">Title</h1>
-			<div class="text_area">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat hic sunt qui earum molestiae vitae odio obcaecati, rerum, ullam, eligendi quam iusto in quod quos harum similique. Excepturi, cumque natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam nostrum architecto reprehenderit eaque! Dolor nesciunt eligendi earum qui assumenda numquam asperiores mollitia quaerat ex nulla, tempore obcaecati, inventore, libero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iste, quisquam reprehenderit totam incidunt, aliquam, aspernatur quam assumenda delectus nemo corporis veritatis cumque. Doloribus reprehenderit sit minus cupiditate minima, at. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat hic sunt qui earum molestiae vitae odio obcaecati, rerum, ullam, eligendi quam iusto in quod quos harum similique. Excepturi, cumque natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam nostrum architecto reprehenderit eaque! Dolor nesciunt eligendi earum qui assumenda numquam asperiores mollitia quaerat ex nulla, tempore obcaecati, inventore, libero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iste, quisquam reprehenderit totam incidunt, aliquam, aspernatur quam assumenda delectus nemo corporis veritatis cumque. Doloribus reprehenderit sit minus cupiditate minima, at.</div>
+			<div class="text_area">Lorem ipsum dolor sit amet. </div>
 		</div>
 	</div>
 	<!-- Spinner Page -->
 	<div class="page spinner on">
-		<div class="dynamic-container">
-			<div class="marker">
-				<svg id ="markerA" width="520" height="520">
-					 <path class="wing" id="0" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z" fill="black"/>
+		<!-- <div class="dynamic-container"> -->
+			<div id="marker" class="marker">
+				<svg id ="shape_area" width="520" height="520">
+					 <path class="wing" id="lucia" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z" fill="black"/>
 				</svg>
+				<div class="innerCircle"></div>
+			</div>
+	<!-- </div> -->
+	</div>
+		<div id="menu" class="marker no-display">
+			<svg class="" id="y" height="520" width="520">
+				<path class="w w_left" id="w_left" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z"/>
+				<path class="w w_right hide" id="w_right" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z"/>
+			</svg>
+			<div id="circle2" class="innerCircle">
+				<img id="down" src="images/down.png">
 			</div>
 		</div>
-	</div>
 </body>
 </html>

@@ -1,0 +1,8 @@
+Slideshow med bilder som laddas in när en detaljvy öppnas
+    - Bilder som laddas in
+    - bilder har samma namn som klasser
+    - En vinge har klassen "lucia", dess bilder har klasserna "lucia1.png" och "lucia2".png
+
+Slideshow med texter som matchar till bilderna -||-
+
+Bakgrunder som laddas in till detaljssidan beroende på vilken flik som öppnas
