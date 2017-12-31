@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="two_css.css">
 	<link rel="stylesheet" type="text/css" href="slideshow.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="spinner_title.js"></script>
 	<script type="text/javascript" src="animation.js"> </script>
 	<script type="text/javascript" src="slideshow.js"></script>
 </head>
@@ -30,7 +31,7 @@
                     </svg>
                 </div>
 
-		<div id="marker" class="marker">
+		<div id="marker" class="marker" data-selected="0" data-moving="false">
 			<svg id ="shape_area" width="520" height="520">
 			<!-- Path 1 image -->
 			<defs>
@@ -72,7 +73,7 @@
 			<path class="wing" id="3" d="M250 250 L62.5 156.25 Q-62.5 250 62.5 343.75 Z" fill="url(#img4)" data-title="valborg" data-image='url("images/valborg_large.jpg")'/>
 
 			</svg>
-			<div class="innerCircle"></div>
+			<div id="innerCircle" class="innerCircle"></div>
 		</div>
 		<div class="footer">
 		    <p class="footer title_text large">Swedish Holidays showcase

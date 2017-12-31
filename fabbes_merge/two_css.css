@@ -35,7 +35,8 @@ body, html {
 
 .spinner {
 	overflow: visible;
-	/*float: right;*/
+	background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .details {
@@ -66,12 +67,35 @@ body, html {
     bottom: 0;
     left: 0; 
     right: 0;
+
+    overflow: visible;
+
+    /*Disable interaction*/
+    pointer-events: none;
+    
+    /*Looks*/
+    /*background: lightgray;*/
+    cursor: pointer;
+    /*Rotation*/
+    transform:rotate(0deg);
+    transform-origin:250px 250px;                          
+    -moz-transform:rotate(0deg);
+    -moz-transform-origin:250px 250px;
+    -ms-transform:rotate(0deg);
+    -ms-transform-origin:250px 250px;                                    
+    -webkit-transform:rotate(0deg);
+    -webkit-transform-origin:250px 250px;
+    /*Depth*/
+    z-index:16;
+
 }
 
 
 .wing {
-	cursor: crosshair;
-	transform-origin: 250px 250px;
+  pointer-events: auto;
+  stroke: black;
+  stroke-width: 5px;
+  stroke-linecap: round;
 }
 
 .show {
@@ -116,7 +140,8 @@ body, html {
 }
 
 .w {
-  cursor: pointer; 
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .w_presenting {
@@ -154,8 +179,8 @@ body, html {
   position: relative;
   left: 14px;
   cursor: pointer;
-  /*visibility: hidden;*/
-  filter: invert(50%)
+  filter: invert(50%);
+  pointer-events: auto;
 }
 
 #down:hover {filter: invert(0%);}
@@ -163,12 +188,6 @@ body, html {
 #down:active {
   filter: invert(100%);
   transform: translateY(10px);
-}
-
-
-.lucia {
-  background-color: gray;
-  /*background-image: url("images/lucia1.jpg")*/
 }
 
 .footer {
@@ -234,4 +253,20 @@ body, html {
 #holiday_text {
       opacity: 0.9;
       margin: 0px;
+}
+
+.lucia {
+  background: linear-gradient(#fff7e8, #0c0608);
+}
+
+.påsk {
+  background: linear-gradient(#234809, #9eb790);
+}
+
+.valborg {
+  background: linear-gradient(#eae6e3, #003766);
+}
+
+.midsommar {
+ background: linear-gradient(#a0b1c5, #d6dee1)
 }
