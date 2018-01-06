@@ -67,7 +67,7 @@ $(document).ready(function(){
             // Restart automatic rotation
             rotateTimer = setInterval(function() {
                 rotateQuarter();
-            }, 5000);
+            }, 10000);
             
         });
     });                   
@@ -161,6 +161,8 @@ function adjustToIncrement(angle, cropper){
     var rotate = 'rotate(' + selected + 'deg)';
     cropper.css({'-moz-transform': rotate, 'transform' : rotate, '-webkit-transform': rotate, '-ms-transform': rotate,
         "transition": "1s ease-out"});
+    
+    // Ersätt med transition end
     setTimeout(function afterOneSecond() {
         $("#marker").data("moving", "false");
     }, 700)  

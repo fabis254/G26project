@@ -15,7 +15,6 @@ body, html {
 .d_off {
 	top: -100%;
 	background-color: #F0EAD6;
-	cursor: pointer;
 	transition: 1s;
 	overflow-y: hidden;
 }
@@ -25,7 +24,6 @@ body, html {
 	transition: 1s;
   background-color: #F0EAD6;
 }
-
 
 .page {
 	width: 100%;
@@ -40,54 +38,38 @@ body, html {
 }
 
 .details {
-	/*background: #eb01a5;*/
-
-}
-
-
-.dynamic-container {
-	width: 1000px;
-  height: 100%; 
-  /*background-color: lightgoldenrodyellow;*/
-  background-color: transparent;
-
-  position: relative; 
-  margin: auto;
-  padding: 0px;
+	
 }
 
 .marker {
 	padding: 0px;
-    width: 500px;
-    height: 500px;
+  width: 500px;
+  height: 500px;
 
-    margin: auto;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0; 
-    right: 0;
+  margin: auto;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0; 
+  right: 0;
 
-    overflow: visible;
+  overflow: visible;
 
-    /*Disable interaction*/
-    pointer-events: none;
-    
-    /*Looks*/
-    /*background: lightgray;*/
-    cursor: pointer;
-    /*Rotation*/
-    transform:rotate(0deg);
-    transform-origin:250px 250px;                          
-    -moz-transform:rotate(0deg);
-    -moz-transform-origin:250px 250px;
-    -ms-transform:rotate(0deg);
-    -ms-transform-origin:250px 250px;                                    
-    -webkit-transform:rotate(0deg);
-    -webkit-transform-origin:250px 250px;
-    /*Depth*/
-    z-index:16;
-
+  /*Disable interaction*/
+  pointer-events: none;
+  /*Looks*/
+  cursor: pointer;
+  /*Rotation*/
+  transform:rotate(0deg);
+  transform-origin:250px 250px;                          
+  -moz-transform:rotate(0deg);
+  -moz-transform-origin:250px 250px;
+  -ms-transform:rotate(0deg);
+  -ms-transform-origin:250px 250px;                                    
+  -webkit-transform:rotate(0deg);
+  -webkit-transform-origin:250px 250px;
+  /*Depth*/
+  z-index:16;
 }
 
 
@@ -117,8 +99,6 @@ body, html {
 }
 
 #menu {
-  top: 0%;
-  position: absolute;
   float: right;
 }
 

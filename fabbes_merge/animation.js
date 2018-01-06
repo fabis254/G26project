@@ -2,7 +2,8 @@ $(document).ready(function() {
 
 $( ".page" ).on( "mode:toggle", function( event ) {
     var page = $( this );
-    $(".w_left").addClass("w_presenting")
+    $(".w_right").removeClass("w_presenting"); 
+    $(".w_left").addClass("w_presenting");
     if ( page.is( ".spinner" ) ) { 
         menuDisplay("on");
         setTimeout(function afterOneSecond() {
@@ -100,7 +101,6 @@ function menuDisplay(state) {
         right.removeClass("show").addClass("hide");
         left.removeClass("show").addClass("hide");
         
-        
 
         $(".hide").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(){
             if (change === true) {
@@ -110,7 +110,7 @@ function menuDisplay(state) {
                 down.removeClass("show").addClass("hide");
                 setTimeout(function afterOneSecond() {
                     menu.removeClass("display").addClass("no-display");
-                }, 400)       
+                }, 400)
                 change = false;
                 return true
             }
@@ -126,8 +126,6 @@ $(".wing").click(function() {
     if (selected === wing_id && moving === "false") {
         var theme = $(this).attr("data-title");
         $(".details").addClass(theme);
-        // Tänk över denna rad
-        var bkg = "images/" + theme + "0.jpg"
         
         var left =  theme + "1";
         var right = theme + "2";
@@ -142,7 +140,6 @@ $(".wing").click(function() {
         jQuery.get(title_src, function(data) {
             title.html(data);
         });
-
 
         var set_txt = "texts/" + left + ".txt";
         jQuery.get(set_txt, function(data) {
@@ -166,7 +163,6 @@ $(".w").click(function() {
 $("#down,  .escape_button").click(function(){
     $(".details").trigger("mode:toggle");
 });
-
 
 
 });
