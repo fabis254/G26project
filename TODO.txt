@@ -1,8 +1,12 @@
-- Read more-knappen, bli en pil med text bredvid istället
-- data-title: Nytt attribute för holiday-title. 
+- o CHECK - data-title: Nytt attribute för holiday-title. 
+- o CHECH - Read more-knappen, bli en pil 
+- med text bredvid istället
+- o CHECK - Fixa Linear Gradient-buggen. 
+
 - Pilen försvinner samtidigt som marker när man klickar (Animation.js)
-- Fixa Linear Gradient-buggen. 
-- Spinner ska sluta röra sig när man byter sida.
 - Gör icke-klickbar inner circle
+- Spinner ska sluta röra sig när man byter sida.
+
 - Kan man få sid-scrollern att inte synas om den intebehövs?
 - Ändra typsnitt på titeln i detailed view. 
+

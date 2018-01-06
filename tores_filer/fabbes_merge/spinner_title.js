@@ -65,9 +65,10 @@ $(document).ready(function(){
             });
 
             // Restart automatic rotation
+            clearInterval(rotateTimer);
             rotateTimer = setInterval(function() {
                 rotateQuarter();
-            }, 10000);
+            }, 5000);
             
         });
     });                   

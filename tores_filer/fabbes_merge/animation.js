@@ -7,6 +7,7 @@ $( ".page" ).on( "mode:toggle", function( event ) {
     if ( page.is( ".spinner" ) ) { 
         menuDisplay("on");
         setTimeout(function afterOneSecond() {
+
             page.removeClass("on").addClass("s_off")
             $(".details").removeClass("d_off").addClass("on");
         }, 1000)    
@@ -125,7 +126,8 @@ $(".wing").click(function() {
     var wing_id = $(this).attr("id");
     if (selected === wing_id && moving === "false") {
         var theme = $(this).attr("data-title");
-        $(".details").addClass(theme);
+        var gradient = $(this).data("gradient");
+        $(".details").css("background", gradient);
         
         var left =  theme + "1";
         var right = theme + "2";
