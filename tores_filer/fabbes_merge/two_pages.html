@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Two pages</title>
+	<link rel="stylesheet" type="text/css" href="two_css.css">
+	<link rel="stylesheet" type="text/css" href="slideshow.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="spinner_title.js"></script>
+	<script type="text/javascript" src="animation.js"> </script>
+	<script type="text/javascript" src="slideshow.js"></script>
+</head>
+<body>
+	<!-- Details Page -->
+	<div class="page details d_off">
+		<div class="picture">
+			<img id="pic" src="images/face.jpg" alt="Not found">
+		</div>	
+		<div class="container">
+			<h1 class="headline">Title</h1>
+			<div class="text_area">Lorem ipsum dolor sit amet. </div>
+		</div>
+	</div>
+	<!-- Spinner Page -->
+	<div class="page spinner on">
+		<div id="holiday_title"><p id="holiday_text" class="large"></p></div>
+		<div class="pointer">
+                    <p></p>
+                    <svg id="down_arrow" width="9" height="10" >
+                        <polyline points="0,0 5,5 9,0" stroke="black" />
+                    </svg>
+                </div>
+
+		<div id="marker" class="marker" data-selected="0" data-moving="false">
+			<svg id ="shape_area" width="520" height="520">
+			<!-- Path 1 image -->
+			<defs>
+			  <pattern id="img1" patternUnits="userSpaceOnUse" width="500" height="300">
+			    <image xlink:href="images/easter.jpg" x="0" y="0" width="500" height="400" />
+			  </pattern>
+			</defs>
+			<!-- path 1 -->
+			<path class="wing" id="0" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z" fill="url(#img1)" data-title="påsk" data-head="Påsk" data-image='url("images/easter_large.jpg")'/>
+			
+			<!-- Path 2 image -->
+			<defs>
+			  <pattern id="img2" patternUnits="userSpaceOnUse" width="500" height="350">
+			    <image xlink:href="images/lucia.jpg" x="190" y="40" width="400" height="320" />
+			  </pattern>
+			</defs>
+
+			<!-- Path 2 -->
+			<path class="wing" id="1" d="M250 250 L437.5 156.25 Q562.5 250 437.5 343.75 Z" fill="url(#img2)" data-title="lucia" data-head="Lucia" data-image='url("images/lucia_large.jpg")'/>
+
+			<!-- Path 3 image -->
+			<defs>
+			  <pattern id="img3" patternUnits="userSpaceOnUse" width="500" height="600">
+			    <image xlink:href="images/midsommar.jpg" x="130" y="95" width="310" height="600" />
+			  </pattern>
+			</defs>
+
+			<!-- Path 3 -->
+			<path class="wing" id="2" d="M250 250 L343.75 431.25 Q250 568.75 156.25 431.25 Z" fill="url(#img3)" data-title="midsommar" data-head="Midsommar" data-image='url("images/midsommar_large.jpg")'/>
+			
+
+			<!-- Path 4 image -->
+			<defs>
+			  <pattern id="img4" patternUnits="userSpaceOnUse" width="375" height="375">
+			    <image xlink:href="images/valborg.jpg" x="-85" y="0" width="375" height="375" />
+			  </pattern>
+			</defs>                        
+			<!-- Path 4 -->
+			<path class="wing" id="3" d="M250 250 L62.5 156.25 Q-62.5 250 62.5 343.75 Z" fill="url(#img4)" data-title="valborg" data-head="Valborg" data-image='url("images/valborg_large.jpg")'/>
+
+			</svg>
+			<div id="innerCircle" class="innerCircle"></div>
+		</div>
+		<div class="footer">
+		    <p class="footer title_text large">Swedish Holidays showcase
+		    </p>
+		</div>
+	</div>
+	<div id="menu" class="marker no-display">
+		<svg class="" id="y" height="520" width="520">
+			<path class="w w_left" id="w_left" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z"/>
+			<path class="w w_right hide" id="w_right" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z"/>
+		</svg>
+		<div id="circle2" class="innerCircle">
+			<img id="down" src="images/down.png">
+		</div>
+	</div>
+	<!-- Title -->
+</body>
+</html>

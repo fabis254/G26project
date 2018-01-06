@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+    <script type="text/javascript" src="spinner.js"></script>
+    <script type="text/javascript" src="transitions.js"></script>
+</head>
+<body>
+	<!-- <div class="topper show"></div> -->
+	<div class="_1 off">
+		<div class="picture"></div>
+		<div class="container">
+			<h1 class="headline">Title</h1>
+			<div class="text_area">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat hic sunt qui earum molestiae vitae odio obcaecati, rerum, ullam, eligendi quam iusto in quod quos harum similique. Excepturi, cumque natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam nostrum architecto reprehenderit eaque! Dolor nesciunt eligendi earum qui assumenda numquam asperiores mollitia quaerat ex nulla, tempore obcaecati, inventore, libero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iste, quisquam reprehenderit totam incidunt, aliquam, aspernatur quam assumenda delectus nemo corporis veritatis cumque. Doloribus reprehenderit sit minus cupiditate minima, at. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat hic sunt qui earum molestiae vitae odio obcaecati, rerum, ullam, eligendi quam iusto in quod quos harum similique. Excepturi, cumque natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quibusdam nostrum architecto reprehenderit eaque! Dolor nesciunt eligendi earum qui assumenda numquam asperiores mollitia quaerat ex nulla, tempore obcaecati, inventore, libero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iste, quisquam reprehenderit totam incidunt, aliquam, aspernatur quam assumenda delectus nemo corporis veritatis cumque. Doloribus reprehenderit sit minus cupiditate minima, at.</div>
+		</div>
+	</div>
+    <div class="_2"></div>
+    <div id ="dynamic-container">
+        <div class="pointer">
+        </div>
+
+        <div id="marker" ondragstart="return false;">
+            <svg id ="markerA" width="520" height="520">
+                <!-- Path 1 image -->
+                <defs> 
+                  <pattern id="img1" patternUnits="userSpaceOnUse" width="500" height="300">
+                    <image xlink:href="images/easter.jpg" x="0" y="0" width="500" height="400" />
+                  </pattern>
+                </defs>
+                <!-- path 1 -->
+                <path class="wing" id="0" d="M250 250 L156.25 62.5 Q250 -62.5 343.75 62.5 Z" fill="url(#img1)"/>
+
+                <!-- Path 2 image -->
+                <defs>
+                  <pattern id="img2" patternUnits="userSpaceOnUse" width="500" height="350">
+                    <image xlink:href="images/lucia.jpg" x="190" y="40" width="400" height="320" />
+                  </pattern>
+                </defs>
+
+                <!-- Path 2 -->
+                <path class="wing" id="90" d="M250 250 L437.5 156.25 Q562.5 250 437.5 343.75 Z" fill="url(#img2)"/>
+
+                <!-- Path 3 image -->
+                <defs>
+                  <pattern id="img3" patternUnits="userSpaceOnUse" width="500" height="600">
+                    <image xlink:href="images/midsommar.jpg" x="130" y="95" width="310" height="600" />
+                  </pattern>
+                </defs>
+
+                <!-- Path 3 -->
+                <path class="wing" id="180" d="M250 250 L343.75 431.25 Q250 568.75 156.25 431.25 Z" fill="url(#img3)"/>
+                
+
+                <!-- Path 4 image -->
+                <defs>
+                  <pattern id="img4" patternUnits="userSpaceOnUse" width="375" height="375">
+                    <image xlink:href="images/valborg.jpg" x="-85" y="0" width="375" height="375" />
+                  </pattern>
+                </defs>                        
+                <!-- Path 4 -->
+                <path class="wing" id="-90" d="M250 250 L62.5 156.25 Q-62.5 250 62.5 343.75 Z" fill="url(#img4)"/>                        
+            </svg>
+            
+            <!-- <img class="egg" src="images/easter.jpg" alt="NONE EASTER"> -->
+
+            <!-- Circle -->
+            <div id ="innerCircle" >
+                <img src="images/spin.png">
+            </div>
+        </div>
+    </div>    
+</body>
+
+<script type="text/javascript">
+	$('._2').click(function() {
+		// $('._1').css({"transition": "2s ease-out", "top" : 0});
+		$('._1').toggleClass("on")
+		$('._1').toggleClass("off")
+		
+        $("._2").css({"opacity" : "0.0", "transition" : "2s ease-out"})
+
+
+		$('.topper').toggleClass('hide')
+		$('.topper').toggleClass('show')
+		
+		$('.topper').css({
+			"bottom" : "-=100%",
+			"transition" : "1s ease-out"
+		})
+	});
+</script>
+
+</html>
