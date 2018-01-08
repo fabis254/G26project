@@ -199,8 +199,7 @@ body, html {
       height: 35px;
       float: top;
       position: absolute;
-      left: 0;
-      right: 0;
+      margin: auto;
       padding-top: 5px;
       border-radius: 10px;
       /*
